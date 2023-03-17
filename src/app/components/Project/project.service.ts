@@ -1,3 +1,10 @@
+import { LocalhostJavaService } from "src/app/services/localhost-java.service";
+import { Injectable } from "@angular/core";
+
+@Injectable({
+	providedIn: 'root',
+})
+
 export class ProjectService {
 	projects = [
 		{
@@ -167,4 +174,8 @@ export class ProjectService {
 		},
 	];
 	filter: any;
+
+	constructor() {
+
+	}
 }

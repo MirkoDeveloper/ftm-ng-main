@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalhostJavaService } from 'src/app/services/localhost-java.service';
 import { ProjectService } from '../project.service';
 
 @Component({
@@ -8,9 +9,13 @@ import { ProjectService } from '../project.service';
 })
 export class ProjectListComponent implements OnInit {
 	projects: any;
-	constructor(private projectService: ProjectService) {}
+	constructor(private http: LocalhostJavaService) {}
 
 	ngOnInit(): void {
-		this.projects = this.projectService.projects;
+		this.http.getProjects().subscribe(data => {
+			this.projects = data;
+			console.log(data);
+			console.log(this.projects)
+		})
 	}
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-project-list-item',
@@ -8,6 +8,10 @@ import { Component, Input } from '@angular/core';
 		// '../Project-List/project-list.component.scss',
 	],
 })
-export class ProjectListItemComponent {
+export class ProjectListItemComponent implements OnInit {
 	@Input() item: any;
+
+	ngOnInit() {
+		console.log(this.item);
+	}
 }
