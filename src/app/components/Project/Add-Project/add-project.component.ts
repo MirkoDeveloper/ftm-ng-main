@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { LocalhostJavaService } from 'src/app/services/localhost-java.service';
 
 @Component({
 	selector: 'app-add-project',
@@ -7,17 +8,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 	styleUrls: ['./add-project.component.scss'],
 })
 export class AddProjectComponent implements OnInit {
-	toppings = new FormControl('');
-	toppingList: string[] = [
-		'opzione 1',
-		'opzione 12',
-		'opzione 13',
-		'opzione 14',
-		'opzione 15',
-		'opzione 16',
-	];
+	constructor(private db: LocalhostJavaService) {}
 
 	addProjectForm: FormGroup = new FormGroup({});
+
+	tipologie: string[] = ['Software (SW)', 'Business (BS)'];
+
+	capoprogetti: string[] = [
+		'Giuseppe Sette',
+		'Mario Rossi',
+		'Luigi Verdi',
+		'Annarita Dosi',
+		'Gianmarco Tocco',
+		'Luigi Bianchi',
+	];
 
 	ngOnInit() {
 		this.addProjectForm = new FormGroup({
@@ -32,12 +36,33 @@ export class AddProjectComponent implements OnInit {
 				Validators.maxLength(3),
 			]),
 			projectLeader: new FormControl('', [Validators.required]),
+			shortDescription: new FormControl('', [
+				Validators.required,
+				Validators.minLength(10),
+			]),
+			note: new FormControl(''),
+			tipologia: new FormControl('', [Validators.required]),
+			scadenza: new FormControl('', [Validators.required]),
 		});
-
-		console.log(this.addProjectForm.value);
 	}
 
 	onSubmit() {
+		console.log(this.addProjectForm);
 		console.log(this.addProjectForm.value);
+
+		// -> INSERT ON DB
+		this.db.postProject({
+			title: this.addProjectForm.value.projectName,
+			acronym: this.addProjectForm.value.acronym,
+			projectLead: this.addProjectForm.value.projectLeader.map(
+				(i: any) => i
+			),
+			description: this.addProjectForm.value.shortDescription,
+			other: this.addProjectForm.value.note,
+			type: this.addProjectForm.value.tipologia,
+			date: this.addProjectForm.value.scadenza,
+		});
+
+		this.addProjectForm.reset();
 	}
 }

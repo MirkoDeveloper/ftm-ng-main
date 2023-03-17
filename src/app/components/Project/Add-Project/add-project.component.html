@@ -1,11 +1,12 @@
-<!-- <div class="fd-headings">
-	<h3 class="fd-headings__title">Aggiungi un progetto</h3>
-</div> -->
 <form
 	class="fd-addproject fd-form"
 	[formGroup]="addProjectForm"
 	(ngSubmit)="onSubmit()"
 >
+	<div class="fd-headings">
+		<h3 class="fd-headings__title">Aggiungi un progetto</h3>
+	</div>
+
 	<div class="fd-form__wrapper">
 		<mat-form-field appearance="outline">
 			<mat-label>Nome Progetto</mat-label>
@@ -23,6 +24,7 @@
 			</mat-error>
 		</mat-form-field>
 	</div>
+
 	<div class="fd-form__wrapper">
 		<mat-form-field appearance="outline">
 			<mat-label>Acronimo</mat-label>
@@ -50,18 +52,19 @@
 			</mat-error>
 		</mat-form-field>
 	</div>
+
 	<div class="fd-form__wrapper">
 		<mat-form-field appearance="outline">
-			<mat-label>Select</mat-label>
+			<mat-label>CapoProgetto</mat-label>
 			<mat-select
 				multiple
 				name="projectLeader"
 				formControlName="projectLeader"
 			>
 				<mat-option
-					*ngFor="let topping of toppingList"
-					[value]="topping"
-					>{{ topping }}</mat-option
+					*ngFor="let capoprogetto of capoprogetti"
+					[value]="capoprogetto"
+					>{{ capoprogetto }}</mat-option
 				>
 			</mat-select>
 			<mat-error
@@ -73,8 +76,89 @@
 			</mat-error>
 		</mat-form-field>
 	</div>
+
 	<div class="fd-form__wrapper">
-		<button type="submit" class="fd-form__submit full large">
+		<mat-form-field appearance="outline">
+			<mat-label>Breve Descrizione</mat-label>
+			<input
+				matInput
+				name="shortDescription"
+				formControlName="shortDescription"
+			/>
+			<mat-error
+				*ngIf="
+					addProjectForm.get('shortDescription')!.hasError('required')
+				"
+			>
+				Una breve descrizione è <strong>richiesta</strong>
+			</mat-error>
+			<mat-error
+				*ngIf="
+					addProjectForm
+						.get('shortDescription')!
+						.hasError('minlength')
+				"
+			>
+				Una descrizione breve deve essere di
+				<strong>10 caratteri</strong>
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Note</mat-label>
+			<input matInput name="note" formControlName="note" />
+		</mat-form-field>
+	</div>
+
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Tipologia</mat-label>
+			<mat-select name="tipologia" formControlName="tipologia">
+				<mat-option
+					*ngFor="let tipologia of tipologie"
+					[value]="tipologia"
+					>{{ tipologia }}</mat-option
+				>
+			</mat-select>
+			<mat-error
+				*ngIf="addProjectForm.get('tipologia')!.hasError('required')"
+			>
+				Selezionare <strong>1 tipologia</strong> per il progetto
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Scadenza</mat-label>
+			<input
+				matInput
+				[matDatepicker]="picker"
+				name="scadenza"
+				formControlName="scadenza"
+			/>
+			<mat-hint>MM/DD/YYYY</mat-hint>
+			<mat-datepicker-toggle
+				matIconSuffix
+				[for]="picker"
+			></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+			<mat-error
+				*ngIf="addProjectForm.get('scadenza')!.hasError('required')"
+			>
+				Selezionare <strong>una scadenza valida</strong> per il progetto
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<div class="fd-form__wrapper">
+		<button
+			type="submit"
+			class="fd-form__submit full large"
+			[disabled]="addProjectForm.status === 'INVALID'"
+		>
 			Crea Progetto
 		</button>
 	</div>

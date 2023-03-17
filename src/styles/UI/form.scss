@@ -1,9 +1,23 @@
 .fd-form {
 	display: flex;
 
+	.fd-headings {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 30px;
+		&__title {
+			font-size: var(--h2) !important;
+		}
+	}
+
 	&__wrapper {
 		width: 100%;
 		margin-bottom: 12px;
+
+		.mat-mdc-form-field {
+			width: 100%;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -125,7 +139,7 @@
 		color: var(--red);
 	}
 
-	button {
+	&__submit {
 		background-color: var(--secondary);
 		border: 0 !important;
 		outline: 0;
@@ -145,6 +159,15 @@
 
 		&:hover {
 			background: var(--secondary-dark);
+		}
+
+		&[disabled] {
+			cursor: not-allowed;
+			background: var(--background-darker);
+
+			&:hover {
+				background: #656564;
+			}
 		}
 	}
 }

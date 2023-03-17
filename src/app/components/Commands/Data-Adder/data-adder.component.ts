@@ -27,7 +27,9 @@ export class DataAdderComponent implements OnInit {
 	openModal() {
 		switch (true) {
 			case this.urlContainsProgetti:
-				this.matDialog.open(AddProjectComponent);
+				this.matDialog.open(AddProjectComponent, {
+					minWidth: '60vh',
+				});
 				break;
 
 			case this.urlContainsProgetti:
