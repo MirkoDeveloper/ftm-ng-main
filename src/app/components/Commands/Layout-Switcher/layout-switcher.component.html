@@ -1,0 +1,19 @@
+<div class="fd-layout-switcher fd-shadow">
+	<label
+		(click)="setGridLayout(1)"
+		[ngClass]="gridLayout === 1 ? 'active' : ''"
+	>
+		<!-- <BsList /> -->
+		<mat-icon fontIcon="reorder"></mat-icon>
+	</label>
+	<input type="radio" name="layout" value="list" />
+	<label
+		(click)="setGridLayout(2)"
+		[ngClass]="gridLayout === 2 ? 'active' : ''"
+	>
+		<!-- <BsGrid /> -->
+		<mat-icon fontIcon="view_module"></mat-icon>
+
+		<input type="radio" name="layout" value="grid" />
+	</label>
+</div>

@@ -1,0 +1,32 @@
+.fd-projectlist {
+	&__commands {
+		display: flex;
+		justify-content: space-between;
+		border-radius: 10px;
+		background: #fff;
+		margin-bottom: 5px;
+
+		.title {
+			flex: 3;
+		}
+
+		> * {
+			flex: 1;
+			padding: 10px 16px;
+			border: 1px solid var(--background-light);
+		}
+	}
+
+	&__commands {
+		.title {
+			flex: 3;
+		}
+
+		> * {
+			flex: 1;
+			color: var(--text-light);
+			font-weight: 400;
+			font-size: 15px;
+		}
+	}
+}

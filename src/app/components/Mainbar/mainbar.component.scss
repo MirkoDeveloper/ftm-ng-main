@@ -1,0 +1,22 @@
+.fd-mainbar {
+	width: 100%;
+	background-color: white;
+	border-radius: var(--border-radius-semi);
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	margin-bottom: var(--mrg-1x);
+
+	&__left,
+	&__right {
+		display: flex;
+	}
+
+	.fd-account {
+		width: 55px;
+		height: 55px;
+		display: flex;
+	}
+}

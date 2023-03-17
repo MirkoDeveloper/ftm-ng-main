@@ -1,0 +1,81 @@
+<!-- <div class="fd-headings">
+	<h3 class="fd-headings__title">Aggiungi un progetto</h3>
+</div> -->
+<form
+	class="fd-addproject fd-form"
+	[formGroup]="addProjectForm"
+	(ngSubmit)="onSubmit()"
+>
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Nome Progetto</mat-label>
+			<input matInput name="projectName" formControlName="projectName" />
+			<mat-error
+				*ngIf="addProjectForm.get('projectName')!.hasError('required')"
+			>
+				Il nome del progetto è <strong>richiesto</strong>
+			</mat-error>
+			<mat-error
+				*ngIf="addProjectForm.get('projectName')!.hasError('minlength')"
+			>
+				Il nome del progetto deve essere di almeno
+				<strong>3 caratteri</strong>
+			</mat-error>
+		</mat-form-field>
+	</div>
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Acronimo</mat-label>
+			<input
+				matInput
+				name="projectAcronym"
+				formControlName="projectAcronym"
+			/>
+			<mat-error
+				*ngIf="
+					addProjectForm.get('projectAcronym')!.hasError('required')
+				"
+			>
+				L'acronimo è <strong>richiesto</strong>
+			</mat-error>
+			<mat-error
+				*ngIf="
+					addProjectForm
+						.get('projectAcronym')!
+						.hasError('minlength') ||
+					addProjectForm.get('projectAcronym')!.hasError('maxlength')
+				"
+			>
+				L'acronimo deve essere di <strong>3 caratteri</strong>
+			</mat-error>
+		</mat-form-field>
+	</div>
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Select</mat-label>
+			<mat-select
+				multiple
+				name="projectLeader"
+				formControlName="projectLeader"
+			>
+				<mat-option
+					*ngFor="let topping of toppingList"
+					[value]="topping"
+					>{{ topping }}</mat-option
+				>
+			</mat-select>
+			<mat-error
+				*ngIf="
+					addProjectForm.get('projectLeader')!.hasError('required')
+				"
+			>
+				Selezionare almeno <strong>1 capoprogetto</strong>
+			</mat-error>
+		</mat-form-field>
+	</div>
+	<div class="fd-form__wrapper">
+		<button type="submit" class="fd-form__submit full large">
+			Crea Progetto
+		</button>
+	</div>
+</form>

@@ -1,0 +1,21 @@
+// -> AddItem
+.fd-commands {
+	&__additem {
+		background-color: var(--primary-dark);
+		border-radius: var(--border-radius-semi);
+		padding: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+		mat-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+			color: white;
+		}
+	}
+}

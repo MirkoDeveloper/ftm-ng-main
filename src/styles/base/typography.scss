@@ -1,0 +1,89 @@
+/* @start: Typography */
+body,
+input,
+button,
+select,
+textarea {
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--text) !important;
+	font-family: var(--font-headings) !important;
+	line-height: 1.4 !important;
+	margin: 0 !important;
+}
+
+h1 {
+	font-size: var(--h1);
+	font-weight: bold;
+}
+
+h2 {
+	font-size: var(--h2);
+	font-weight: bold;
+}
+
+h3 {
+	font-size: var(--h3);
+	font-weight: bold;
+}
+
+h4 {
+	font-size: var(--h4);
+	font-weight: bold;
+}
+
+h5 {
+	font-size: var(--h5);
+	font-weight: bold;
+}
+
+h6 {
+	font-size: var(--h6);
+	font-weight: bold;
+}
+
+p {
+	font-size: var(--p);
+	font-weight: normal;
+}
+
+/* @start: Headings */
+.md-headings {
+	margin-bottom: 0;
+	&__title {
+		font-size: var(--h1);
+		color: white;
+		font-weight: bold;
+
+		+ * {
+			margin-top: 8px;
+		}
+	}
+
+	&__subtitle {
+		font-size: var(--h3);
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+
+	&__text {
+		font-size: var(--h5);
+		font-weight: 500;
+		line-height: 1.4;
+		margin-top: 20px;
+		p:not(:first-child) {
+			margin-top: 30px;
+		}
+	}
+}

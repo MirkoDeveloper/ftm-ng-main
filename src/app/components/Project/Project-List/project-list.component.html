@@ -1,0 +1,14 @@
+<div class="fd-projectlist">
+	<div class="fd-projectlist__commands fd-shadow">
+		<div class="title">Progetto</div>
+		<div class="key">Chiave</div>
+		<div class="projectLead">Capo Progetto</div>
+		<div class="type">Tipo di Progetto</div>
+		<div class="date">Scadenza</div>
+	</div>
+	<app-project-list-item
+		class="fd-projectlist__list fd-shadow"
+		*ngFor="let item of projects"
+		[item]="item"
+	></app-project-list-item>
+</div>

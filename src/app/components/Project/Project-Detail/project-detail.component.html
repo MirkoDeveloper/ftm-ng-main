@@ -1,0 +1,52 @@
+<div class="fd-headings">
+	<h1 class="fd-headings__title">{{ activeProject[0].title }}</h1>
+	<div class="fd-headings__content">
+		<mat-chip-listbox multiple>
+			<mat-chip-option class="fd-btn--chips"
+				>Task Totali ({{ taskCounter }})</mat-chip-option
+			>
+			<mat-chip-option
+				>In Lavorazione ({{ wipTaskCounter }})</mat-chip-option
+			>
+			<mat-chip-option>Aperti ({{ openedTaskCounter }})</mat-chip-option>
+			<mat-chip-option>Chiusi ({{ closedTaskCounter }})</mat-chip-option>
+		</mat-chip-listbox>
+	</div>
+	<!-- <Button
+            title="task"
+            type="green"
+            dimension="small"
+            opacity={true}
+            cursor={false}
+            suffix={taskCounter}
+        />
+        <Button
+            title="In Lavorazione"
+            type="violet"
+            dimension="small"
+            opacity={true}
+            cursor={false}
+            suffix={wipTaskCounter}
+        />
+        <Button
+            title="Chiusi"
+            type="red"
+            dimension="small"
+            opacity={true}
+            cursor={false}
+            suffix={closedTaskCounter}
+        /> -->
+</div>
+<div class="fd-project">
+	<div class="fd-project__commands fd-shadow">
+		<div class="title">Task</div>
+		<div class="key">Chiave</div>
+		<div class="type">Tipo di Task</div>
+		<div class="date">Stato</div>
+	</div>
+	<app-task-item
+		class="fd-project__tasks"
+		*ngFor="let task of activeProject[0].task"
+		[item]="task"
+	></app-task-item>
+</div>

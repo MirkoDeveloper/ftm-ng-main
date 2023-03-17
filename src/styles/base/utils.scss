@@ -1,0 +1,13 @@
+/* @start: Class Utils */
+.color {
+	&--primary {
+		color: var(--primary);
+	}
+	&--secondary {
+		color: var(--secondary);
+	}
+}
+
+.fd-shadow {
+	box-shadow: 0 7px 30px -10px rgba(210, 210, 210, 0.15);
+}

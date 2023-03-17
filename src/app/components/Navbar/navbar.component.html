@@ -1,0 +1,73 @@
+<div class="fd-nav fd-shadow">
+	<div class="fd-nav__logo">
+		<img src="/assets/fides-logo.png" alt="Fides Logo" />
+	</div>
+	<nav class="fd-nav__menu">
+		<ul>
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/">
+					<div class="fd-nav__icon all">
+						<mat-icon fontIcon="dashboard"></mat-icon>
+					</div>
+					Dashboard
+				</a>
+			</li>
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/progetti">
+					<div class="fd-nav__icon fill">
+						<mat-icon fontIcon="view_list"></mat-icon>
+						<!-- <RxDashboard /> -->
+					</div>
+					Progetti
+				</a>
+			</li>
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/my-task">
+					<div class="fd-nav__icon fill2">
+						<mat-icon fontIcon="sticky_note_2"></mat-icon>
+						<!-- <MdOutlineTaskAlt /> -->
+					</div>
+					My Task
+				</a>
+			</li>
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/calendar">
+					<div class="fd-nav__icon fill">
+						<mat-icon fontIcon="event_note"></mat-icon>
+						<!-- <AiOutlineCalendar /> -->
+					</div>
+					Calendar
+				</a>
+			</li>
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/settings">
+					<div class="fd-nav__icon stroke">
+						<mat-icon fontIcon="settings"></mat-icon>
+						<!-- <FiSettings /> -->
+					</div>
+					Settings
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>

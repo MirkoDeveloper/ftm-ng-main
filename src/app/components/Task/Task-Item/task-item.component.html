@@ -1,0 +1,6 @@
+<a [routerLink]="'/progetti/task/' + item.id" class="fd-project__task">
+	<h2 class="title">{{ item.title }}</h2>
+	<div class="key">{{ item.key + "-" + item.id }}</div>
+	<div class="type">{{ item.tipologia }}</div>
+	<div class="stato">{{ item.stato }}</div>
+</a>

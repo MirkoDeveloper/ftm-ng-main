@@ -1,0 +1,168 @@
+$btn: fd-btn;
+
+/* @start: Buttons */
+.#{$btn} {
+	position: relative;
+	width: auto;
+	min-width: 160px;
+	padding: 16px 32px;
+	border: 0px solid;
+	border-radius: 10px;
+	line-height: 1;
+	text-align: center;
+	vertical-align: middle;
+	outline: 0 !important;
+	text-decoration: none !important;
+	display: flex;
+	overflow: hidden;
+	user-select: none;
+	appearance: none;
+	cursor: pointer;
+	transition: border 0.3s var(--transition-base),
+		background 0.3s var(--transition-base);
+
+	&.no-cursor {
+		cursor: default !important;
+	}
+
+	&__label,
+	&__suffix {
+		position: relative;
+		font-size: 18px;
+		font-family: var(--font-headings);
+		text-transform: uppercase;
+		font-weight: bold;
+		transition: color 0.3s var(--transition-base);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+	}
+
+	&__suffix {
+		padding-left: 10px;
+	}
+
+	&--full {
+		width: 100%;
+		min-width: auto;
+	}
+
+	&--small {
+		min-width: auto;
+		max-width: 250px;
+		padding: 8px 12px;
+	}
+
+	&--large {
+		padding: 20px 40px;
+		// max-width: 70%;
+	}
+
+	&--primary {
+		border-color: var(--primary);
+		background-color: var(--primary);
+		transition: background-color var(--transition-base) 0.2s;
+
+		.fd-btn__label,
+		.fd-btn__suffix {
+			color: white;
+			transition: color var(--transition-base) 0.2s;
+		}
+
+		&:hover {
+			background-color: var(--primary-dark);
+
+			.fd-btn__label {
+				color: white;
+			}
+		}
+	}
+
+	&--secondary {
+		border-color: var(--secondary);
+		background-color: var(--secondary);
+
+		.fd-btn__label,
+		.fd-btn__suffix {
+			color: white;
+			z-index: 3;
+		}
+
+		&:hover {
+			.fd-btn__label {
+				color: var(--primary);
+			}
+
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+
+	&--red {
+		border-color: var(--red);
+		background-color: var(--red);
+		transition: background-color var(--transition-base) 0.2s;
+
+		.fd-btn__label,
+		.fd-btn__suffix {
+			color: white;
+			transition: color var(--transition-base) 0.2s;
+		}
+
+		&:hover {
+			background-color: var(--red-dark);
+
+			.fd-btn__label {
+				color: white;
+			}
+		}
+	}
+
+	&--violet {
+		border-color: var(--violet);
+		background-color: var(--violet);
+		transition: background-color var(--transition-base) 0.2s;
+
+		.fd-btn__label,
+		.fd-btn__suffix {
+			color: white;
+			transition: color var(--transition-base) 0.2s;
+		}
+
+		&:hover {
+			background-color: var(--violet-dark);
+
+			.fd-btn__label {
+				color: white;
+			}
+		}
+	}
+
+	&--green {
+		border-color: var(--green);
+		background-color: var(--green);
+		transition: background-color var(--transition-base) 0.2s;
+
+		.fd-btn__label,
+		.fd-btn__suffix {
+			color: white;
+			transition: color var(--transition-base) 0.2s;
+		}
+
+		&:hover {
+			background-color: var(--green-dark);
+
+			.fd-btn__label {
+				color: white;
+			}
+		}
+	}
+}
+
+// Material Angular Chips
+.mdc-evolution-chip__text-label {
+	font-size: var(--p);
+	font-family: var(--font-headings);
+}

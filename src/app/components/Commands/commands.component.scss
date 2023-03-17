@@ -1,0 +1,14 @@
+// -> Commands
+.fd-commands {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	margin-bottom: 20px;
+
+	&__left,
+	&__right {
+		width: auto;
+		height: 100%;
+	}
+}
