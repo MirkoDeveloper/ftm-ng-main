@@ -61,6 +61,8 @@ export class AddProjectComponent implements OnInit {
 			other: this.addProjectForm.value.note,
 			type: this.addProjectForm.value.tipologia,
 			date: this.addProjectForm.value.scadenza,
+		}).subscribe(data => {
+			console.log(data);
 		});
 
 		this.addProjectForm.reset();
