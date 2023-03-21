@@ -1,1 +1,14 @@
-<p>task-list works!</p>
+<div class="fd-tasklist">
+	<div class="fd-tasklist__commands fd-shadow">
+		<div class="title">Nome Task</div>
+		<div class="key">Chiave</div>
+		<div class="projectLead">Capo Progetto</div>
+		<div class="type">Tipo di Progetto</div>
+		<div class="date">Scadenza</div>
+	</div>
+	<app-task-list-item
+		class="fd-tasklist__list fd-shadow"
+		*ngFor="let item of tasks"
+		[item]="item"
+	></app-task-list-item>
+</div>

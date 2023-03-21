@@ -17,4 +17,8 @@ export class LocalhostJavaService {
 	postProject(body: {}) {
 		return this.http.post(this.localhostUrl + '/ftm/progetti', body);
 	}
+
+	getTask() {
+		return this.http.get(this.localhostUrl + '/ftm/api/task');
+	}
 }
