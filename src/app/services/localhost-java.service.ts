@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
 	providedIn: 'root',
 })
 export class LocalhostJavaService {
-	localhostUrl = 'http://localhost:3005';
+	// localhostUrl = 'http://localhost:3005';
+	localhostUrl = 'http://localhost:8081';
 
 	constructor(private http: HttpClient) {}
 
@@ -13,7 +14,7 @@ export class LocalhostJavaService {
 		return this.http.get(this.localhostUrl + '/ftm/api/progetti');
 	}
 
-  postProject(body: {}) {
-    return this.http.post(this.localhostUrl + '/ftm/progetti', body);
-  }
+	postProject(body: {}) {
+		return this.http.post(this.localhostUrl + '/ftm/progetti', body);
+	}
 }

@@ -1,0 +1,27 @@
+.fd-dashboard {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: masonry;
+	grid-template-columns: masonry;
+	gap: 20px;
+
+	// column-count: 4;
+	// column-fill: balance;
+	// gap: 20px;
+
+	// display: grid;
+	// gap: 20px;
+	// grid-template-columns: repeat(4, 1fr);
+	// grid-template-rows: repeat(1fr);
+
+	// column-count: 4;
+
+	// display: flex;
+	// flex-flow: column wrap;
+	// align-content: space-between;
+	// min-height: 100vh;
+
+	> * {
+		width: 100%;
+	}
+}

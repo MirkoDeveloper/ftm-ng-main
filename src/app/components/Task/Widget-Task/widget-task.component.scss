@@ -1,0 +1,70 @@
+$spacing-vertical: 24px;
+$spacing-horizontal: 28px;
+
+.fd-widget-task {
+	border-radius: 15px;
+	background: white;
+
+	&__head {
+		padding: $spacing-vertical $spacing-horizontal 0 $spacing-horizontal;
+	}
+
+	&__title {
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1;
+
+		span {
+			font-weight: normal;
+			font-size: 18px;
+		}
+	}
+
+	&__body {
+		padding: $spacing-vertical 0 0 0;
+
+		ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+
+			li {
+				cursor: pointer;
+				display: flex;
+				justify-content: space-between;
+				background: #fff;
+				transition: background var(--transition-base) 0.2s;
+				flex: 1;
+				padding: 10px $spacing-horizontal;
+				border-bottom: 1px solid var(--background-light);
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				&:hover {
+					background: #f9f8f7;
+				}
+
+				.title {
+					flex: 3;
+				}
+
+				> * {
+					color: var(--text);
+					font-weight: 400;
+					font-size: 17px;
+					display: flex;
+					align-items: center;
+					flex: 1;
+					padding: 10px 16px;
+					border: 1px solid var(--background-light);
+				}
+			}
+		}
+	}
+
+	&__footer {
+		padding: 0 0 $spacing-vertical 0;
+	}
+}

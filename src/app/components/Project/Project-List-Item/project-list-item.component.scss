@@ -4,12 +4,22 @@
 		justify-content: space-between;
 		border-radius: 10px;
 		background: #fff;
+		transition: background var(--transition-base) 0.2s;
+
+		&:hover {
+			background: #f9f8f7;
+		}
 
 		.title {
 			flex: 3;
 		}
 
 		> * {
+			color: var(--text);
+			font-weight: 400;
+			font-size: 17px;
+			display: flex;
+			align-items: center;
 			flex: 1;
 			padding: 10px 16px;
 			border: 1px solid var(--background-light);
@@ -18,20 +28,5 @@
 
 	&__list {
 		margin-top: 6px;
-	}
-
-	&__item {
-		transition: background var(--transition-base) 0.2s;
-		> * {
-			color: var(--text);
-			font-weight: 400;
-			font-size: 17px;
-			display: flex;
-			align-items: center;
-		}
-
-		&:hover {
-			background: #f9f8f7;
-		}
 	}
 }

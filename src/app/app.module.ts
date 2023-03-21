@@ -35,6 +35,11 @@ import { CommandsComponent } from './components/Commands/commands.component';
 import { LayoutSwitcherComponent } from './components/Commands/Layout-Switcher/layout-switcher.component';
 import { AddProjectComponent } from './components/Project/Add-Project/add-project.component';
 import { DataAdderComponent } from './components/Commands/Data-Adder/data-adder.component';
+import { WidgetProjectComponent } from './components/Project/Widget-Project/widget-project.component';
+import { WidgetTaskComponent } from './components/Task/Widget-Task/widget-task.component';
+import { TaskListComponent } from './components/Task/Task-List/task-list.component';
+import { TaskListItemComponent } from './components/Task/Task-List-Item/task-list-item.component';
+import { TaskDetailComponent } from './components/Task/Task-Detail/task-detail.component';
 
 @NgModule({
 	declarations: [
@@ -56,6 +61,11 @@ import { DataAdderComponent } from './components/Commands/Data-Adder/data-adder.
 		LayoutSwitcherComponent,
 		AddProjectComponent,
 		DataAdderComponent,
+		WidgetProjectComponent,
+		WidgetTaskComponent,
+		TaskListComponent,
+		TaskListItemComponent,
+		TaskDetailComponent,
 	],
 	imports: [
 		BrowserModule,
