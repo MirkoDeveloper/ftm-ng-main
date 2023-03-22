@@ -15,10 +15,13 @@ export class LocalhostJavaService {
 	}
 
 	postProject(body: {}) {
-		return this.http.post(this.localhostUrl + '/ftm/progetti', body);
+		return this.http.post(this.localhostUrl + '/ftm/api/progetti', body);
 	}
 
 	getTask() {
 		return this.http.get(this.localhostUrl + '/ftm/api/task');
 	}
-}
+	
+	postTask(body: {}) {
+		return this.http.post(this.localhostUrl + '/ftm/api/task', body)
+	}

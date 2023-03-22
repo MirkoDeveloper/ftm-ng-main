@@ -1,0 +1,153 @@
+<form
+	class="fd-addtask fd-form"
+	[formGroup]="addTaskForm"
+	(ngSubmit)="onSubmit()"
+>
+	<div class="fd-headings">
+		<h3 class="fd-headings__title">Aggiungi un Task</h3>
+	</div>
+	<!-- NOME TASK -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Nome Task</mat-label>
+			<input matInput name="taskName" formControlName="taskName" />
+			<mat-error
+				*ngIf="addTaskForm.get('taskName')!.hasError('required')"
+			>
+				Il nome del task è <strong>richiesto</strong>
+			</mat-error>
+			<mat-error
+				*ngIf="addTaskForm.get('taskName')!.hasError('minlength')"
+			>
+				Il nome del task deve essere di almeno
+				<strong>3 caratteri</strong>
+			</mat-error>
+			<mat-error
+				*ngIf="addTaskForm.get('taskName')!.hasError('maxlength')"
+			>
+				Il nome del task deve essere massino di
+				<strong>20 caratteri</strong>
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<!-- PROGETTO -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Progetto Madre</mat-label>
+			<mat-select multiple name="project" formControlName="project">
+				<mat-option
+					*ngFor="let progetto of progetti"
+					[value]="progetto"
+					>{{ progetto }}</mat-option
+				>
+			</mat-select>
+			<mat-error *ngIf="addTaskForm.get('project')!.hasError('required')">
+				Selezionare <strong>1 progetto</strong> sul quale assegnare il
+				task
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<!-- TIPOlOGIA -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Tipo di Ticked</mat-label>
+			<mat-select name="type" formControlName="type">
+				<mat-option
+					*ngFor="let tipologia of tipologie"
+					[value]="tipologia"
+					>{{ tipologia }}</mat-option
+				>
+			</mat-select>
+			<mat-error *ngIf="addTaskForm.get('type')!.hasError('required')">
+				Selezionare <strong>una tipologia</strong> di ticket
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<!-- PRIORITÁ  -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Priorità Ticket</mat-label>
+			<mat-select name="priority" formControlName="priority">
+				<mat-option
+					*ngFor="let priority of priorities"
+					[value]="priority"
+					>{{ priority }}</mat-option
+				>
+			</mat-select>
+			<mat-error
+				*ngIf="addTaskForm.get('priority')!.hasError('required')"
+			>
+				Selezionare <strong>una priorità</strong> per il ticket
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<!-- DESCRIZIONE  -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Descrizione</mat-label>
+			<input
+				matInput
+				name="taskDescription"
+				formControlName="taskDescription"
+			/>
+		</mat-form-field>
+	</div>
+
+	<!-- ASSEGNATARIO -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Assegnatario</mat-label>
+			<mat-select multiple name="assignee" formControlName="assignee">
+				<mat-option
+					*ngFor="let assignee of assignees"
+					[value]="assignee"
+					>{{ assignee }}</mat-option
+				>
+			</mat-select>
+			<mat-error
+				*ngIf="addTaskForm.get('assignee')!.hasError('required')"
+			>
+				Selezionare <strong>un assegnatario</strong> del ticket
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<!-- SCADENZA -->
+	<div class="fd-form__wrapper">
+		<mat-form-field appearance="outline">
+			<mat-label>Scadenza</mat-label>
+			<input
+				matInput
+				[matDatepicker]="picker"
+				name="scadenza"
+				formControlName="scadenza"
+			/>
+			<mat-hint>MM/DD/YYYY</mat-hint>
+			<mat-datepicker-toggle
+				matIconSuffix
+				[for]="picker"
+			></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+			<mat-error
+				*ngIf="addTaskForm.get('scadenza')!.hasError('required')"
+			>
+				Selezionare <strong>una scadenza valida</strong> per il task
+			</mat-error>
+		</mat-form-field>
+	</div>
+
+	<!-- SUBMIT -->
+	<div class="fd-form__wrapper">
+		<button
+			type="submit"
+			class="fd-form__submit full large"
+			[disabled]="addTaskForm.status === 'INVALID'"
+		>
+			Crea Task
+		</button>
+	</div>
+</form>

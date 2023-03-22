@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NavbarComponent } from '../../Navbar/navbar.component';
 import { MainbarComponent } from '../../Mainbar/mainbar.component';
 import { AddProjectComponent } from '../../Project/Add-Project/add-project.component';
+import { AddTaskComponent } from '../../Task/Add-Task/add-task.component';
 
 @Component({
 	selector: 'app-data-adder',
@@ -21,7 +22,7 @@ export class DataAdderComponent implements OnInit {
 		this.currentUrl = this.location.path();
 		this.urlContainsProgetti = this.currentUrl.includes('progetti');
 		this.urlContainsTask = this.currentUrl.includes('task');
-		console.log(this.urlContainsProgetti); // logs the current URL
+		console.log(this.urlContainsTask); // logs the current URL
 	}
 
 	openModal() {
@@ -32,8 +33,10 @@ export class DataAdderComponent implements OnInit {
 				});
 				break;
 
-			case this.urlContainsProgetti:
-				this.matDialog.open(MainbarComponent);
+			case this.urlContainsTask:
+				this.matDialog.open(AddTaskComponent, {
+					minWidth: '60vh',
+				});
 				break;
 
 			default:

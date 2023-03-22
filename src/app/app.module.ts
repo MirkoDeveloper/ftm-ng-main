@@ -40,6 +40,7 @@ import { WidgetTaskComponent } from './components/Task/Widget-Task/widget-task.c
 import { TaskListComponent } from './components/Task/Task-List/task-list.component';
 import { TaskListItemComponent } from './components/Task/Task-List-Item/task-list-item.component';
 import { TaskDetailComponent } from './components/Task/Task-Detail/task-detail.component';
+import { AddTaskComponent } from './components/Task/Add-Task/add-task.component';
 
 @NgModule({
 	declarations: [
@@ -66,6 +67,7 @@ import { TaskDetailComponent } from './components/Task/Task-Detail/task-detail.c
 		TaskListComponent,
 		TaskListItemComponent,
 		TaskDetailComponent,
+		AddTaskComponent,
 	],
 	imports: [
 		BrowserModule,
