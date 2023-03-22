@@ -11,7 +11,7 @@
 		}
 
 		.title {
-			flex: 3;
+			flex: 2;
 		}
 
 		> * {
@@ -23,6 +23,22 @@
 			flex: 1;
 			padding: 10px 16px;
 			border: 1px solid var(--background-light);
+		}
+
+		&__commands {
+			justify-content: center;
+
+			> * {
+				padding: 6px;
+			}
+
+			.edit {
+				background-color: var(--green);
+			}
+
+			.elete {
+				background-color: var(--red);
+			}
 		}
 	}
 
