@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
 	--primary: #ffe032;
@@ -6,16 +7,22 @@
 	--primary-light: #fde768;
 	--primary-dark: #fd752f;
 	--primary-dark-alpha: 253, 117, 47;
+
 	--secondary: #0b6581;
 	--secondary-alpha: 0, 108, 141;
 	--secondary-dark: #084c60;
+
 	--background: #f7f6f4;
 	--background-alpha: 247, 246, 244;
 	--background-light: #f1efeb;
 	--background-dark: #dcdad6;
 	--background-darker: #aaa8a4;
-	--text: #282828;
-	--text-light: #424242;
+
+	--line: rgba(202, 202, 202, 20%);
+
+	--text: #696969;
+	--text-light: #8e8e8e;
+
 	--green: #41d351;
 	--green-opacity: rgba(55, 248, 78, 0.5);
 	--violte: #d2459b;
@@ -23,16 +30,18 @@
 	--red: #f92121;
 	--red-opacity: rgba(252, 51, 51, 0.5);
 
-	--font-headings: "Inter";
-	--font-body: "Inter";
+	--font-headings: "Open Sans";
+	--font-body: "Open Sans";
 
-	--h1: 60px;
+	--h1: 50px;
 	--h2: 50px;
 	--h3: 40px;
 	--h4: 28px;
 	--h5: 22px;
 	--h6: 18px;
-	--p: 16px;
+	--p-large: 16px;
+	--p: 15px;
+	--p-small: 13px;
 
 	--pdg-1x: 30px;
 	--pdg-2x: 60px;

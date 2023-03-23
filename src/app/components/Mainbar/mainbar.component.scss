@@ -1,22 +1,17 @@
 .fd-mainbar {
 	width: 100%;
 	background-color: white;
-	border-radius: var(--border-radius-semi);
 	height: 80px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
-	margin-bottom: var(--mrg-1x);
+	border-bottom: 2px solid var(--line);
+	position: relative;
+	z-index: 1;
 
 	&__left,
 	&__right {
-		display: flex;
-	}
-
-	.fd-account {
-		width: 55px;
-		height: 55px;
 		display: flex;
 	}
 }

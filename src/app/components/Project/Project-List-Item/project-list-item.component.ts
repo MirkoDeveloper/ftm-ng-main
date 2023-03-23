@@ -11,11 +11,13 @@ import { LocalhostJavaService } from 'src/app/services/localhost-java.service';
 })
 export class ProjectListItemComponent implements OnInit {
 	@Input() item: any;
+	@Input() index: any;
 
 	constructor(private db: LocalhostJavaService) {}
 
 	ngOnInit() {
 		console.log(this.item);
+		console.log(this.index);
 	}
 
 	editProject() {
@@ -26,6 +28,8 @@ export class ProjectListItemComponent implements OnInit {
 		console.log('eliminate');
 		console.log(this.item.id);
 
-		this.db.eliminateProject(this.item.id).subscribe(data => console.log(data));
+		this.db
+			.eliminateProject(this.item.id)
+			.subscribe((data) => console.log(data));
 	}
 }

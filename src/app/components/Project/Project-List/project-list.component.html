@@ -1,15 +1,18 @@
-<div class="fd-projectlist">
-	<div class="fd-projectlist__commands fd-shadow">
-		<div class="title">Progetto</div>
-		<div class="key">Chiave</div>
-		<div class="projectLead">Capo Progetto</div>
-		<div class="type">Tipo di Progetto</div>
-		<div class="date">Scadenza</div>
-		<div class="commands">Comandi</div>
+<div class="fd-projectlist fd-shadow">
+	<div class="fd-projectlist__commands">
+		<div class="hash xsmall">#</div>
+		<div class="title auto">Progetto</div>
+		<div class="type regular">Tipologia</div>
+		<div class="projectLead xlarge">Capo Progetto</div>
+		<div class="key small">Chiave</div>
+		<div class="date large">Scadenza</div>
+		<div class="note large">Note</div>
+		<div class="commands regular">Comandi</div>
 	</div>
 	<app-project-list-item
-		class="fd-projectlist__list fd-shadow"
-		*ngFor="let item of projects"
+		class="fd-projectlist__list"
+		*ngFor="let item of projects; let i = index"
 		[item]="item"
+		[index]="i"
 	></app-project-list-item>
 </div>

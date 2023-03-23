@@ -34,7 +34,8 @@
 							"src/styles/base/typography.scss",
 							"src/styles/base/utils.scss",
 							"src/styles/UI/form.scss",
-							"src/styles/UI/button.scss"
+							"src/styles/UI/button.scss",
+							"src/styles/materials/materials.scss"
 						],
 						"scripts": []
 					},

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// -> MATERIALS ANGULAR
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -15,6 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/Navbar/navbar.component';
@@ -84,6 +87,8 @@ import { AddTaskComponent } from './components/Task/Add-Task/add-task.component'
 		MatSelectModule,
 		MatDatepickerModule,
 		MatNativeDateModule,
+		MatExpansionModule,
+		MatMenuModule,
 	],
 	providers: [ProjectService],
 	bootstrap: [AppComponent],

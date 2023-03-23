@@ -1,3 +1,4 @@
+<!-- 
 <div class="fd-nav fd-shadow">
 	<div class="fd-nav__logo">
 		<img src="/assets/fides-logo.png" alt="Fides Logo" />
@@ -24,7 +25,6 @@
 				<a routerLink="/progetti">
 					<div class="fd-nav__icon fill">
 						<mat-icon fontIcon="view_list"></mat-icon>
-						<!-- <RxDashboard /> -->
 					</div>
 					Progetti
 				</a>
@@ -37,7 +37,6 @@
 				<a routerLink="/task">
 					<div class="fd-nav__icon fill2">
 						<mat-icon fontIcon="sticky_note_2"></mat-icon>
-						<!-- <MdOutlineTaskAlt /> -->
 					</div>
 					My Task
 				</a>
@@ -50,7 +49,6 @@
 				<a routerLink="/calendar">
 					<div class="fd-nav__icon fill">
 						<mat-icon fontIcon="event_note"></mat-icon>
-						<!-- <AiOutlineCalendar /> -->
 					</div>
 					Calendar
 				</a>
@@ -63,11 +61,162 @@
 				<a routerLink="/settings">
 					<div class="fd-nav__icon stroke">
 						<mat-icon fontIcon="settings"></mat-icon>
-						<!-- <FiSettings /> -->
 					</div>
 					Settings
 				</a>
 			</li>
 		</ul>
 	</nav>
+</div>
+-->
+
+<div class="fd-nav fd-shadow">
+	<div class="fd-nav__logo">
+		<img src="/assets/logo-black.png" alt="Fides Logo" />
+	</div>
+
+	<nav class="fd-nav__static-menu">
+		<ul>
+			<!-- DASHBOARD -->
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/">
+					<div class="fd-nav__icon">
+						<mat-icon fontSet="material-icons-outlined"
+							>dashboard</mat-icon
+						>
+					</div>
+					Dashboard
+				</a>
+			</li>
+			<!-- NOTIFICHE -->
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/notifiche">
+					<div class="fd-nav__icon">
+						<mat-icon fontSet="material-icons-outlined"
+							>notifications</mat-icon
+						>
+					</div>
+					Notifiche
+				</a>
+			</li>
+			<!-- OBIETTIVI -->
+			<li
+				class=""
+				routerLinkActive="active"
+				[routerLinkActiveOptions]="{ exact: true }"
+			>
+				<a routerLink="/obiettivi">
+					<div class="fd-nav__icon">
+						<mat-icon fontSet="material-icons-outlined"
+							>verified</mat-icon
+						>
+					</div>
+					Obiettivi
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<nav class="fd-nav__dynamic-menu">
+		<mat-accordion>
+			<!-- PROGETTI -->
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title> Progetti </mat-panel-title>
+				</mat-expansion-panel-header>
+
+				<ul class="fd-nav__dynamic-menu-navigation">
+					<!-- VEDI TUTTI PROGETTI -->
+					<li
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="{ exact: true }"
+					>
+						<a routerLink="/progetti">
+							<div class="icon">P</div>
+							Vedi Tutti
+						</a>
+					</li>
+					<!-- PROGETTO PREFERITO 1 -->
+					<li
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="{ exact: true }"
+					>
+						<a routerLink="/progetti/1">
+							<div class="icon purple">A</div>
+							Abbecedario
+						</a>
+					</li>
+					<!-- PROGETTO PREFERITO 2 -->
+					<li
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="{ exact: true }"
+					>
+						<a routerLink="/progetti/2">
+							<div class="icon yellow">b</div>
+							Babylon
+						</a>
+					</li>
+					<!-- PROGETTO PREFERITO 3 -->
+					<li
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="{ exact: true }"
+					>
+						<a routerLink="/progetti/3">
+							<div class="icon pink">T</div>
+							Trenitalia
+						</a>
+					</li>
+				</ul>
+			</mat-expansion-panel>
+			<!-- DOCUMENTATION -->
+			<mat-expansion-panel>
+				<mat-expansion-panel-header>
+					<mat-panel-title>Documentazione</mat-panel-title>
+				</mat-expansion-panel-header>
+				<ul class="fd-nav__dynamic-menu-navigation">
+					<!-- VEDI TUTTI PROGETTI -->
+					<li
+						routerLinkActive="active"
+						[routerLinkActiveOptions]="{ exact: true }"
+					>
+						<a routerLink="/progetti"> Da definire </a>
+					</li>
+				</ul>
+			</mat-expansion-panel>
+		</mat-accordion>
+	</nav>
+
+	<div class="fd-nav__account">
+		<div class="data">
+			<div class="icon"></div>
+			<div class="name">Mirko Piccinno</div>
+			<div class="settings">
+				<button
+					mat-icon-button
+					[matMenuTriggerFor]="menu"
+					aria-label="Example icon-button with a menu"
+				>
+					<mat-icon>more_vert</mat-icon>
+				</button>
+				<mat-menu #menu="matMenu">
+					<button mat-menu-item>
+						<mat-icon>settings</mat-icon>
+						<span>Impostazioni</span>
+					</button>
+					<button mat-menu-item>
+						<mat-icon>logout</mat-icon>
+						<span>Logout</span>
+					</button>
+				</mat-menu>
+			</div>
+		</div>
+	</div>
 </div>

@@ -1,10 +1,26 @@
 <div class="fd-projectlist__item">
-	<a class="title" [routerLink]="'/progetti/' + item.id">{{ item.title }}</a>
-	<a class="key" [routerLink]="'/progetti/' + item.id">{{ item.acronym }}</a>
-	<a class="project-lead" [routerLink]="'/progetti/' + item.id">{{ item.projectLead }}</a>
-	<a class="type" [routerLink]="'/progetti/' + item.id">{{ item.type }}</a>
-	<a class="date" [routerLink]="'/progetti/' + item.id">{{ item.date }}</a>
-	<div class="commands">
+	<a class="hash xsmall" [routerLink]="'/progetti/' + item.id">{{
+		item.title
+	}}</a>
+	<a class="title auto" [routerLink]="'/progetti/' + item.id">{{
+		item.title
+	}}</a>
+	<a class="type regular" [routerLink]="'/progetti/' + item.id">{{
+		item.type
+	}}</a>
+	<a class="project-lead xlarge" [routerLink]="'/progetti/' + item.id">{{
+		item.projectLead
+	}}</a>
+	<a class="key small" [routerLink]="'/progetti/' + item.id">{{
+		item.acronym
+	}}</a>
+	<a class="date large" [routerLink]="'/progetti/' + item.id">{{
+		item.date
+	}}</a>
+	<a class="note large" [routerLink]="'/progetti/' + item.id">{{
+		item.date
+	}}</a>
+	<div class="commands regular">
 		<div class="edit" (click)="editProject()">
 			<mat-icon fontIcon="edit"></mat-icon>
 		</div>

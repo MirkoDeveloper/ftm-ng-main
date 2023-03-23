@@ -2,31 +2,39 @@
 	&__commands {
 		display: flex;
 		justify-content: space-between;
-		border-radius: 10px;
 		background: #fff;
 		margin-bottom: 5px;
 
-		.title {
-			flex: 2;
+		> .xsmall {
+			width: 50px;
+		}
+
+		> .small {
+			width: 100px;
+		}
+
+		> .regular {
+			width: 150px;
+		}
+
+		> .large {
+			width: 240px;
+		}
+
+		> .xlarge {
+			width: 320px;
+		}
+
+		> .auto {
+			flex: 1;
 		}
 
 		> * {
-			flex: 1;
+			font-size: var(--p-large);
 			padding: 10px 16px;
 			border: 1px solid var(--background-light);
-		}
-	}
-
-	&__commands {
-		.title {
-			flex: 2;
-		}
-
-		> * {
-			flex: 1;
-			color: var(--text-light);
-			font-weight: 400;
-			font-size: 15px;
+			display: flex;
+			justify-content: center;
 		}
 	}
 }
