@@ -18,6 +18,10 @@ export class LocalhostJavaService {
 		return this.http.post(this.localhostUrl + '/ftm/api/progetti', body);
 	}
 
+	eliminateProject(id: number) {
+		return this.http.delete(`${this.localhostUrl}/ftm/api/progetti/${id}`);
+	}
+
 	getTask() {
 		return this.http.get(this.localhostUrl + '/ftm/api/task');
 	}

@@ -1,16 +1,16 @@
-<a [routerLink]="'/progetti/' + item.id" class="fd-projectlist__item">
-	<h2 class="title">{{ item.title }}</h2>
-	<div class="key">{{ item.acronym }}</div>
-	<div class="project-lead">{{ item.projectLead }}</div>
-	<div class="type">{{ item.type }}</div>
-	<div class="date">{{ item.date }}</div>
+<div class="fd-projectlist__item">
+	<a class="title" [routerLink]="'/progetti/' + item.id">{{ item.title }}</a>
+	<a class="key" [routerLink]="'/progetti/' + item.id">{{ item.acronym }}</a>
+	<a class="project-lead" [routerLink]="'/progetti/' + item.id">{{ item.projectLead }}</a>
+	<a class="type" [routerLink]="'/progetti/' + item.id">{{ item.type }}</a>
+	<a class="date" [routerLink]="'/progetti/' + item.id">{{ item.date }}</a>
 	<div class="commands">
-		<div class="edit">
+		<div class="edit" (click)="editProject()">
 			<mat-icon fontIcon="edit"></mat-icon>
 		</div>
-		<div class="delete">
-			<mat-icon fontIcon="trash"></mat-icon>
+		<div class="delete" (click)="eliminateProject()">
+			<mat-icon fontIcon="delete"></mat-icon>
 		</div>
 	</div>
-</a>
+</div>
 <!-- <h1>item</h1> -->

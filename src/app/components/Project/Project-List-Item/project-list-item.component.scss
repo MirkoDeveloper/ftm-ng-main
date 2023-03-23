@@ -25,19 +25,27 @@
 			border: 1px solid var(--background-light);
 		}
 
-		&__commands {
+		.commands {
 			justify-content: center;
 
 			> * {
+				cursor: pointer;
 				padding: 6px;
+				margin-right: 4px;
+
+				&:last-child {
+					margin-right: 0;
+				}
 			}
 
 			.edit {
-				background-color: var(--green);
+				background-color: var(--green-opacity);
+				border-radius: var(--border-radius-semi);
 			}
 
-			.elete {
-				background-color: var(--red);
+			.delete {
+				background-color: var(--red-opacity);
+				border-radius: var(--border-radius-semi);
 			}
 		}
 	}
