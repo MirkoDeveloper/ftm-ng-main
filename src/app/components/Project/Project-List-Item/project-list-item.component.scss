@@ -3,7 +3,10 @@
 		display: flex;
 		justify-content: space-between;
 		background: #fff;
-		margin-bottom: 5px;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.04);
+		}
 
 		> .xsmall {
 			width: 50px;
@@ -35,6 +38,7 @@
 			border: 1px solid var(--background-light);
 			display: flex;
 			justify-content: center;
+			align-items: center;
 		}
 	}
 
